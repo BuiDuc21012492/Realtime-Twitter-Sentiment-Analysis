@@ -25,5 +25,18 @@ Luồng dữ liệu của hệ thống hoạt động theo 5 bước chính:
 ## Quá trình khởi chạy và trạng thái hệ thống
 Toàn bộ hệ thống được khởi chạy bằng một lệnh duy nhất từ thư mục gốc của dự án: docker-compose up --build. Lệnh này tự động xây dựng (build) các image cho từng dịch vụ và khởi tạo các container theo đúng thứ tự phụ thuộc đã được định nghĩa trong file docker-compose.yml.
 Sau khi khởi động, trạng thái của các dịch vụ được kiểm tra bằng lệnh docker-compose ps. 
+<img width="1492" height="327" alt="Image" src="https://github.com/user-attachments/assets/d32abc5b-c651-4f9b-9fe8-e37d47bc9f83" />
 
 Để chứng minh dữ liệu đã chảy thông suốt qua toàn bộ pipeline, chúng ta tiến hành kiểm tra log của các dịch vụ. Hình dưới thể hiện log đồng thời của các dịch vụ consumer và dashboard
+
+<img width="1501" height="524" alt="Image" src="https://github.com/user-attachments/assets/9c1ab3d9-b813-45ad-9eba-7802e59e4859" />
+
+Log của consumer cho thấy quá trình xử lý và nhận dữ liệu
+
+<img width="1499" height="526" alt="Image" src="https://github.com/user-attachments/assets/44650e2b-6cf3-493c-8f10-43da6d7f3d9c" />
+
+Log của dashboard cho thấy quá trình xử lý và nhận dữ liệu
+
+<img width="1847" height="894" alt="Image" src="https://github.com/user-attachments/assets/76800480-821b-4663-8b51-2fad8c38dbe7" />
+Giao diện web
+
