@@ -19,4 +19,11 @@ Luồng dữ liệu của hệ thống hoạt động theo 5 bước chính:
 4.	Bước 4 - Thu thập kết quả (Consume for Dashboard): Dịch vụ Dashboard hoạt động như một consumer, liên tục lắng nghe topic sentiment_topic để nhận các kết quả phân tích mới nhất. Dữ liệu này được lưu trữ tạm thời trong bộ nhớ của dịch vụ.
 5.	Bước 5 - Trực quan hóa (Visualize): Giao diện web của Dashboard, được xây dựng bằng Dash, tự động làm mới sau mỗi 2 giây. Trong mỗi lần làm mới, nó đọc dữ liệu đã thu thập được và vẽ lại biểu đồ tròn, cung cấp cho người dùng một cái nhìn cập nhật về phân phối cảm xúc của toàn bộ tập dữ liệu.
 
-## Cấu truc thư mục
+## Cấu trúc thư mục
+<img width="921" height="444" alt="Image" src="https://github.com/user-attachments/assets/fb3bc26e-ffdf-4b7d-a620-d463ea409c6b" />
+
+## Quá trình khởi chạy và trạng thái hệ thống
+Toàn bộ hệ thống được khởi chạy bằng một lệnh duy nhất từ thư mục gốc của dự án: docker-compose up --build. Lệnh này tự động xây dựng (build) các image cho từng dịch vụ và khởi tạo các container theo đúng thứ tự phụ thuộc đã được định nghĩa trong file docker-compose.yml.
+Sau khi khởi động, trạng thái của các dịch vụ được kiểm tra bằng lệnh docker-compose ps. 
+
+Để chứng minh dữ liệu đã chảy thông suốt qua toàn bộ pipeline, chúng ta tiến hành kiểm tra log của các dịch vụ. Hình dưới thể hiện log đồng thời của các dịch vụ consumer và dashboard
